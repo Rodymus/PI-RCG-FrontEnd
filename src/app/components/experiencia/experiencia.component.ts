@@ -17,8 +17,12 @@ export class ExperienciaComponent implements OnInit {
     this.experienciaService.getExperiencia().subscribe(data => {this.experiencia = data})
   }
 
-  /*eliminarExperiencia(index: number){
-    this.listExperiencia.splice(index, 1);
+  /*eliminarExperiencia(id: number){
+    this.experienciaService.deleteExperiencia(id).subscribe(data => {this.experiencia = data});
   }*/
+
+  eliminarExperiencia(id: number){
+    this.experienciaService.deleteExperiencia().subscribe(data => {this.experiencia = data});
+  }
 
 }
