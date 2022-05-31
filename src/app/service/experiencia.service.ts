@@ -7,13 +7,13 @@ import { experiencia } from '../model/experiencia.model';
 @Injectable({
   providedIn: 'root'
 })
-export class PersonaService {
-  URL = 'http://localhost:8080/personas/';
+export class ExperienciaService {
+  URL = 'http://localhost:8080/experiencia/';
 
   constructor(private http: HttpClient) { }
 
   public getExperiencia(): Observable<experiencia>{
-    return this.http.get<experiencia>(this.URL+ 'traer/perfil');
+    return this.http.get<experiencia>(this.URL + 'traer/perfil');
   }
 
 }
