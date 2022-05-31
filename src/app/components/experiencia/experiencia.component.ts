@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { experiencia } from 'src/app/model/experiencia.model';
+import { ExperienciaService } from 'src/app/service/experiencia.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -7,19 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienciaComponent implements OnInit {
 
-  listExperiencia: any[] = [
-    { empresa: 'UNPA', puesto: 'Master en informática', descripcion: 'analista de datos', fecha: '2022'},
-    { empresa: 'UTN', puesto: 'Lic. Org. Industrial', descripcion: 'analista de costos', fecha: '2009'},
-    { empresa: '750', puesto: 'Perito Mercantil', descripcion: 'analista de contable', fecha: '1998'}
-  ];
+  experiencia: experiencia = new experiencia('','','','');
 
-  constructor() { }
+  constructor(public experienciaService: ExperienciaService) { }
 
   ngOnInit(): void {
+    this.experienciaService.getExperiencia().subscribe(data => {this.experiencia = data})
   }
 
-  eliminarExperiencia(index: number){
+  /*eliminarExperiencia(index: number){
     this.listExperiencia.splice(index, 1);
-  }
+  }*/
 
 }

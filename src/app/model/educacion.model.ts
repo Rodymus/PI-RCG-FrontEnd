@@ -6,6 +6,7 @@ export class educacion {
   fecha: String;
 
 
+
   constructor(escuela: String, titulo: String, descripcion: String, fecha: String){
       this.escuela = escuela;
       this.titulo = titulo;

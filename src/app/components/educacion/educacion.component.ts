@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { educacion } from 'src/app/model/educacion.model';
+import { EducacionService } from 'src/app/service/educacion.service';
 
 @Component({
   selector: 'app-educacion',
@@ -7,19 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducacionComponent implements OnInit {
 
-  listEducacion: any[] = [
-    { escuela: 'UNPA', titulo: 'Master en informática', descripcion: 'analista de datos', fecha: '2022'},
-    { escuela: 'UTN', titulo: 'Lic. Org. Industrial', descripcion: 'analista de costos', fecha: '2009'},
-    { escuela: '750', titulo: 'Perito Mercantil', descripcion: 'analista de contable', fecha: '1998'}
-  ];
+  educacion: educacion = new educacion('','','','');
 
-  constructor() { }
+
+  constructor(public educacionService: EducacionService) { }
 
   ngOnInit(): void {
-  }
-
-  eliminarEducacion(index: number){
-    this.listEducacion.splice(index, 1);
+    this.educacionService.getEducacion().subscribe(data => {this.educacion = data})
   }
 
 }

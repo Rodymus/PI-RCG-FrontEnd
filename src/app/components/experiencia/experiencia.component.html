@@ -4,7 +4,7 @@
   <div class="col-lg-11">
     <table>
       <tbody>
-        <tr *ngFor="let experiencia of listExperiencia; let i = index">
+        <tr>
           <td>{{experiencia.empresa}}</td>
           <td>{{experiencia.puesto}}</td>
           <td>{{experiencia.descripcion}}</td>
@@ -13,7 +13,7 @@
             <i class="fa-solid fa-pen-to-square"></i>
           </td>
           <td>
-            <i (click)="eliminarExperiencia(i)" class="fa-solid fa-trash text-danger"></i>
+            <i class="fa-solid fa-trash text-danger"></i>
           </td>
         </tr>
       </tbody>
