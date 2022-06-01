@@ -21,8 +21,8 @@ export class EducacionService {
     return this.http.delete<educacion>(this.URL + 'borrar/{id}');
   }
 
-  public editEducacion(id: number, empresa: String, puesto: String, descripcion: String, fecha: String): Observable<educacion>{
-    return this.http.post<educacion>(this.URL + this.EDIT + empresa + puesto +descripcion ,fecha);
+  public editEducacion(id: number, escuela: String, titulo: String, descripcion: String, fecha: String): Observable<educacion>{
+    return this.http.post<educacion>(this.URL + this.EDIT + escuela + titulo +descripcion ,fecha);
   }
 
 }
