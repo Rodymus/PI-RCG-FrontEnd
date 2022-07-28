@@ -20,6 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { interceptorProvider } from './service/interceptor-service';
 //import { NuevoUsuarioComponent } from './model/nuevo-usuario/nuevo-usuario.component';
 
 
@@ -55,7 +56,9 @@ import { LoginComponent } from './components/login/login.component';
       animationDuration: 300
     })
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
