@@ -1,24 +1,43 @@
 <div class="row">
-  <h3>Educación</h3>
-  <div class="col-lg-1"></div>
+  <h2>Educación</h2>
+  <div class="col-lg-2">
+    <button
+      type="button"
+      class="btn btn-warning"
+      routerLink="/nuevaexp"
+      *ngIf="isLogged"
+    >
+      Agregar Educación
+    </button>
+  </div>
+  <div class="col lg 1"></div>
   <div class="col-lg-11">
-    <table>
+    <table class="table">
       <tbody>
-        <tr>
-          <td>{{educacion.escuela}}</td>
-          <td>{{educacion.titulo}}</td>
-          <td>{{educacion.descripcion}}</td>
-          <td>{{educacion.fecha}}</td>
+        <tr *ngFor3="let Educacion of expe">
           <td>
-            <i class="fa-solid fa-pen-to-square"></i>
+            <h4>{{ Educacion.nombreE }}</h4>
           </td>
-          <td>
-            <i class="fa-solid fa-trash text-danger"></i>
+          <td>{{ Educacion.descripcionE }}</td>
+          <td *ngIf="isLogged">
+            <button
+              class="btn btn-light"
+              routerLink="/editexp/{{Educacion.id}}"
+            >
+              <i class="fa-solid fa-pen-to-square"></i>Editar
+            </button>
           </td>
+          <td *ngIf="isLogged">
+          <button
+            class="btn btn-danger"
+            (click)="borrar(Educacion.id)"
+          >
+            <i class="fa-solid fa-trash text-danger"></i>Borrar</button>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+
 
 
