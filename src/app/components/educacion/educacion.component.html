@@ -1,10 +1,16 @@
+<head>
+<!---link para utilizar font-avesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
 <div class="row">
   <h2>Educación</h2>
   <div class="col-lg-2">
     <button
       type="button"
       class="btn btn-warning"
-      routerLink="/nuevaexp"
+      routerLink="/nuevaedu"
       *ngIf="isLogged"
     >
       Agregar Educación
@@ -22,7 +28,7 @@
           <td *ngIf="isLogged">
             <button
               class="btn btn-light"
-              routerLink="/editexp/{{Educacion.id}}"
+              routerLink="/editedu/{{Educacion.id}}"
             >
               <i class="fa-solid fa-pen-to-square"></i>Editar
             </button>
