@@ -3,15 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { persona } from '../model/persona.model';
 
-//const TOKEN_KEY = 'AuthToken';
-//const USERNAME_KEY = 'AuthUsername';
-//const AUTHORITIES_KEY = 'AuthAuthorities';
+const TOKEN_KEY = 'AuthToken';
+const USERNAME_KEY = 'AuthUsername';
+const AUTHORITIES_KEY = 'AuthAuthorities';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaService {
-  URL = 'http://localhost:8080/personas/';
+  URL = 'https://massive-becky-rodymus.koyeb.app/personas/';
 
   constructor(private http: HttpClient) { }
 
