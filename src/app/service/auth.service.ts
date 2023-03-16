@@ -10,7 +10,7 @@ import { NuevoUsuario } from '../model/nuevo-usuario';
 })
 export class AuthService {
 
-  authURL = 'https://amassive-becky-rodymus.koyeb.app/auth/';
+  authURL = 'https://massive-becky-rodymus.koyeb.app/auth/';
 
   constructor(private httpClient: HttpClient) { }
 
